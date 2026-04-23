@@ -1,0 +1,149 @@
+.agent-page {
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.agent-header h2 { font-size: 1.5rem; font-weight: 700; }
+.agent-header p { color: var(--text-secondary); margin-top: 4px; }
+
+.agent-stats { display: flex; gap: 16px; }
+
+.astat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.astat span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  font-family: 'Space Mono', monospace;
+}
+
+.astat { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+.agent-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+}
+
+.agent-main { display: flex; flex-direction: column; gap: 16px; }
+
+/* EMPTY STATE */
+.empty-state {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.empty-icon { font-size: 3rem; margin-bottom: 16px; }
+.empty-state h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.empty-state p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
+.empty-hint { margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-secondary); padding: 8px 12px; border-radius: 8px; }
+
+.loading-state { color: var(--text-muted); padding: 40px; text-align: center; }
+
+/* ESCALATION CARD */
+.escalation-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeSlideIn 0.3s ease;
+}
+
+.escalation-card.resolved {
+  opacity: 0.75;
+  border-color: rgba(0,212,170,0.2);
+}
+
+.esc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.esc-id { display: flex; align-items: center; gap: 10px; }
+.esc-session { font-size: 0.75rem; color: var(--text-muted); font-family: 'Space Mono', monospace; }
+.esc-time { font-size: 0.75rem; color: var(--text-muted); }
+
+.esc-query label,
+.esc-reason label,
+.esc-response-area label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.esc-query p { font-size: 0.9rem; color: var(--text-primary); font-style: italic; }
+.esc-reason p { font-size: 0.85rem; color: var(--accent-warning); }
+
+.esc-response-area { display: flex; flex-direction: column; gap: 10px; }
+
+.agent-textarea {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.agent-textarea:focus { border-color: var(--accent-primary); }
+
+/* SIDEBAR */
+.agent-sidebar { display: flex; flex-direction: column; gap: 16px; }
+.agent-sidebar .card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 14px; }
+
+.hitl-steps { display: flex; flex-direction: column; gap: 12px; }
+
+.hitl-step {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.hitl-step-icon { font-size: 1rem; width: 26px; text-align: center; }
+.hitl-step-label { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
+.hitl-step-desc { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+
+.trigger-list { display: flex; flex-direction: column; gap: 10px; }
+
+.trigger-item {
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-danger);
+}
+
+.trigger-key { font-size: 0.8rem; font-weight: 700; color: var(--text-primary); }
+.trigger-val { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
